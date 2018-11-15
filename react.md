@@ -31,4 +31,10 @@
 # PropTypes 和组件参数验证
 * npm install --save prop-types
 
-# 高阶组件（Higher-Order Components）
+# 高阶组件（Higher-Order Components） 
+* 装饰者模式
+* 高阶组件就是一个函数，传给它一个组件，它返回一个新的组件。
+* 其实就是为了组件之间的代码复用。
+* 高阶组件内部的包装组件和被包装组件之间通过 props 传递数据。
+# context
+* React.js 的 context 就是这么一个东西，某个组件只要往自己的 context 里面放了某些状态，这个组件之下的所有子组件都直接访问这个状态而不需要通过中间组件的传递。一个组件的 context 只有它的子组件能够访问，它的父组件是不能访问到的，你可以理解每个组件的 context 就是瀑布的源头，只能往下流不能往上飞。
