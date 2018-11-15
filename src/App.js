@@ -3,9 +3,14 @@ import React, {Component} from 'react';
 import './App.css';
 
 class Title extends Component {
+  handleClickOnTitle() {
+    console.log('Click on title')
+  }
+
   render() {
-    return (
-      <h1>React小书justdoit</h1>
+    return (   // 这些 on* 的事件监听只能用在普通的HTML的标签上,而不能使用在组件标签上  和普通浏览器一样,事件监听函数会被自动传入一个event对象 这个对象和普通的浏览器event 对象所包含的方法和属性都基本一致。不同的是React.js中
+      // event对象 并不是浏览器提供的,而是它自己内部所构建的。对外提供统一的API和属性。
+      <h1 onClick={this.handleClickOnTitle}>React小书justdoit</h1>
     )
   }
 }
