@@ -48,13 +48,34 @@ class Footer extends Component {
 }
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      likedText: '已赞',
+      unlikedText: '赞'
+    }
+  }
+
+  handleClickOnChange() {
+    this.setState({
+      likedText: '取消',
+      unlikedText: '点赞'
+    })
+  }
+
   render() {
     return (
       <div>
         <Header/>
         <Main/>
         <Footer/>
-        <LikeButton/>
+        <LikeButton
+          likedText={this.state.likedText}
+          unlikedText={this.state.unlikedText}
+        />
+        <button onClick={this.handleClickOnChange.bind(this)}>
+          修改 wordings
+        </button>
       </div>
     );
   }

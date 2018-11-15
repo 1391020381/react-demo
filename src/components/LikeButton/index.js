@@ -7,31 +7,44 @@ import React, {Component} from 'react'
  * setState是异步更新的。
  * **/
 class LikeButton extends Component {
+  static defaultProps = {  // 默认配置 defaultProps
+    likedText: '取消',
+    unlikedText: '点赞'
+  }
+
   constructor() {
     super()
     this.state = {isLiked: false, count: 0}
   }
 
-  handleClickOnLikeButton() {  // setStat会合并
-    // this.setState({
-    //   isLiked: !this.state.isLiked
+  handleClickOnLikeButton() {
+    this.setState({
+      isLiked: !this.state.isLiked
+    })
+    // this.setState((prevState) => {  // setStat会合并
+    //   return {count: 0}
     // })
-    this.setState((prevState) => {
-      return {count: 0}
-    })
-    this.setState((preState) => {
-      return {count: preState.count + 1}
-    })
-    this.setState((prevState) => {
-      return {count: prevState.count + 2}
-    })
+    // this.setState((preState) => {
+    //   return {count: preState.count + 1}
+    // })
+    // this.setState((prevState) => {
+    //   return {count: prevState.count + 2}
+    // })
   }
 
+// 每个组件都可以接受一个 props参数,它是一个对象,包含了所有你对这个组件的配置。
+  // 在使用一个组件的时候,可以把参数放在标签的属性当中,所有的属性都会作为 props 对象的键值
+  // 组件内部就可以通过 this.props 来访问到这些配置参数了。
+  // JSX 的表达式 插入可以在标签属性上使用。所以其实可以把任何类型的数据作为组件的参数,包括 字符串、数字、对象、数组、甚至函数等等。
+  // props 不可变 组件的使用者可以主动地通过重新渲染的方式把新的 props传入组件当中。
   render() {
+    // const likedText = this.props.likedText || '取消'
+    // const unlikedText = this.props.unlikedText || '点赞'
     return (
       <button onClick={this.handleClickOnLikeButton.bind(this)}>
         {/*{this.state.isLiked ? '取消' : '点赞'}*/}
-        {this.state.count}
+        {this.state.isLiked ? this.props.likedText : this.props.unlikedText}
+        {/*{this.state.count}*/}
       </button>
     )
   }
