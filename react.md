@@ -24,3 +24,11 @@
 
 #props.children 和容器类组件
 * props.children 获取 使用自定义组件的时候，可以在其中嵌套 JSX 结构。嵌套的结构在组件内部都可以通过 props.children 获取到
+
+# dangerouslySetHTML 和 style 属性
+* 出于安全考虑的原因（XSS 攻击），在 React.js 当中所有的表达式插入的内容都会被自动转义
+
+# PropTypes 和组件参数验证
+* npm install --save prop-types
+
+# 高阶组件（Higher-Order Components）
