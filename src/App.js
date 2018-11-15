@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import LikeButton from './components/LikeButton'
-
+import List from './components/List'
+import AutoFocusInut from './components/AutoFocusInput'
 class Title extends Component {
   handleClickOnTitle(e) {
     console.log('Click on title', e.target.innerHTML, this)
@@ -76,6 +77,8 @@ class App extends Component {
         <button onClick={this.handleClickOnChange.bind(this)}>
           修改 wordings
         </button>
+        <List/>
+        <AutoFocusInut/>
       </div>
     );
   }
