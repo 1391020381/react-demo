@@ -21,3 +21,6 @@
 ## ref
 * 其实可以给组件标签也加上 ref,获取到的是这个 组件在 React.js 内部初始化的实例
 * 能不用 ref 就不用
+
+#props.children 和容器类组件
+* props.children 获取 使用自定义组件的时候，可以在其中嵌套 JSX 结构。嵌套的结构在组件内部都可以通过 props.children 获取到

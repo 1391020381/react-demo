@@ -4,6 +4,7 @@ import './App.css';
 import LikeButton from './components/LikeButton'
 import List from './components/List'
 import AutoFocusInut from './components/AutoFocusInput'
+import Card from './components/Card'
 class Title extends Component {
   handleClickOnTitle(e) {
     console.log('Click on title', e.target.innerHTML, this)
@@ -79,6 +80,12 @@ class App extends Component {
         </button>
         <List/>
         <AutoFocusInut/>
+        <Card>
+        <h2>React.js 小书</h2>
+    <div>开源、免费、专业、简单</div>
+    订阅：<input />
+
+        </Card>
       </div>
     );
   }
