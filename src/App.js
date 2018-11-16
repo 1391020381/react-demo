@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 //import logo from './logo.svg';
 import './App.css';
 import LikeButton from './components/LikeButton'
 import List from './components/List'
 import AutoFocusInut from './components/AutoFocusInput'
 import Card from './components/Card'
+import Content from './components/Content'
 class Title extends Component {
   handleClickOnTitle(e) {
     console.log('Click on title', e.target.innerHTML, this)
@@ -22,7 +24,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Title/>
+        <Title />
         <h2>This is Header</h2>
       </div>
     )
@@ -68,9 +70,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header/>
-        <Main/>
-        <Footer/>
+        <Content></Content>
+        <Header />
+        <Main />
+        <Footer />
         <LikeButton
           likedText={this.state.likedText}
           unlikedText={this.state.unlikedText}
@@ -78,12 +81,12 @@ class App extends Component {
         <button onClick={this.handleClickOnChange.bind(this)}>
           修改 wordings
         </button>
-        <List/>
-        <AutoFocusInut/>
+        <List />
+        <AutoFocusInut />
         <Card>
-        <h2>React.js 小书</h2>
-    <div>开源、免费、专业、简单</div>
-    订阅：<input />
+          <h2>React.js 小书</h2>
+          <div>开源、免费、专业、简单</div>
+          订阅：<input />
 
         </Card>
       </div>

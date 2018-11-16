@@ -38,3 +38,34 @@
 * 高阶组件内部的包装组件和被包装组件之间通过 props 传递数据。
 # context
 * React.js 的 context 就是这么一个东西，某个组件只要往自己的 context 里面放了某些状态，这个组件之下的所有子组件都直接访问这个状态而不需要通过中间组件的传递。一个组件的 context 只有它的子组件能够访问，它的父组件是不能访问到的，你可以理解每个组件的 context 就是瀑布的源头，只能往下流不能往上飞。
+# 纯函数
+* 一个函数的返回结果只依赖与它的参数,并且在执行过程里面没有副作用,我们就把这个函数叫做纯函数。
+# Redux
+```
+// 定一个 reducer
+function reducer(state,action){
+    // 初始化 state 和 switch case
+}
+
+// 生成 store
+const store = createStore(reducer)
+
+// 监听数据变化重新渲染页面
+store.subscribe(()=> renderApp(store.getState()))
+
+// 首次渲染页面
+renderApp(store.getState())
+
+// 后面可以随意 dispatch了,页面自动更新
+
+store.dispatch()
+```
+* 高阶组件
+  ```
+function connect(a,b){
+    return function(c){
+        console.log(a,b,c)
+        return 组件
+    }
+}
+  ```
